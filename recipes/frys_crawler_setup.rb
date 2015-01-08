@@ -17,10 +17,10 @@ node[:deploy].each do |application, deploy|
     variables deploy: deploy
   end
 
-  settings = node[:crawler][application]
+  settings = node[:frys_crawler][application]
   # configure rails_env in case of non-rails app
   rack_env = deploy[:rails_env] || settings[:rack_env] || settings[:rails_env]
-  settings[:crawlers].each do |hostname, quantity|
+  settings[:frys_crawlers].each do |quantity|
 
     quantity.times do |idx|
       idx = idx + 1 # make index 1-based
