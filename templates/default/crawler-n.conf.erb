@@ -1,0 +1,11 @@
+#!upstart
+description "crawler <%= @instance %>"
+respawn
+start on starting crawler-<%= @application %>
+stop on stopping crawler-<%= @application %>
+
+env RACK_ENV=<%= @rack_env %>
+
+chdir <%= @deploy[:deploy_to] %>/current
+
+exec sudo -u deploy -E -- ruby <%= @deploy[:deploy_to] -%>/current/bin/crawler -h <%= @hostname -%> -p 80 >> /var/log/crawler/<%= @application %>-<%= @instance %>.log 2>&1
