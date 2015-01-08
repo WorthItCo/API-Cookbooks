@@ -1,0 +1,1 @@
+default[:products_chef][:crawlers] = { 'products.api.worthit.co' => 1 }
