@@ -4,4 +4,4 @@ metadata
 
 cookbook 'opsworks-resque', git: 'https://github.com/WorthItCo/opsworks-resque'
 cookbook 'solrcloud', git: 'https://github.com/WorthItCo/chef-solrcloud'
-cookbook 'apache_zookeeper', git: 'https://github.com/bbaugher/apache_zookeeper.git'
+cookbook 'apache_zookeeper', git: 'https://github.com/WorthItCo/apache_zookeeper.git'
