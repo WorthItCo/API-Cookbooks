@@ -16,7 +16,10 @@ node[:deploy].each do |application, deploy|
     mode '0644'
     variables deploy: deploy
   end
-
+  cron "job_name" do
+    hour "*"
+    command "service crawler-#{application} stop; service crawler-productsapi start"
+  end
   settings = node[:crawler][application]
   # configure rails_env in case of non-rails app
   rack_env = deploy[:rails_env] || settings[:rack_env] || settings[:rails_env]

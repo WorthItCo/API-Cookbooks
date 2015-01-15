@@ -4,5 +4,5 @@ maintainer_email 'YOUR_EMAIL'
 license          'All rights reserved'
 description      'Installs/Configures products_chef'
 long_description 'Installs/Configures products_chef'
-version          '0.2.0'
+version          '0.2.1'
 
