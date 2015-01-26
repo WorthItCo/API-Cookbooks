@@ -6,7 +6,7 @@
 #
 # All rights reserved - Do Not Redistribute
 #
-
+include_recipe 'products_chef::crawler_cron'
 node[:deploy].each do |application, deploy|
 
   Chef::Log.info("Configuring crawler for application #{application}")
@@ -16,7 +16,7 @@ node[:deploy].each do |application, deploy|
     mode '0644'
     variables deploy: deploy
   end
-  
+
   settings = node[:crawler][application]
   # configure rails_env in case of non-rails app
   rack_env = deploy[:rails_env] || settings[:rack_env] || settings[:rails_env]
