@@ -17,6 +17,7 @@ node[:deploy].each do |application, deploy|
     variables deploy: deploy
   end
   cron "job_name" do
+    minute 10
     hour "*"
     command "service crawler-#{application} stop; service crawler-productsapi start"
   end
