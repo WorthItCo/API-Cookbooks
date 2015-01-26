@@ -6,7 +6,7 @@
 #
 # All rights reserved - Do Not Redistribute
 #
-include_recipe 'crawler_cron'
+include_recipe 'products_chef::crawler_cron'
 node[:deploy].each do |application, deploy|
 
   Chef::Log.info("Configuring crawler for application #{application}")
