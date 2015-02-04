@@ -27,7 +27,7 @@ node[:deploy].each do |application, deploy|
       template "/etc/init/crawler-#{application}-#{idx}.conf" do
         source "crawler-n.conf.erb"
         mode '0644'
-        variables application: application, hostname: hostname, rack_env: rack_env, deploy: deploy, instance: idx
+        variables application: application, hostname: hostname, port: settings[:port] || 80, proto: setting[:proto] || 'http',rack_env: rack_env, deploy: deploy, instance: idx
       end
     end
   end
