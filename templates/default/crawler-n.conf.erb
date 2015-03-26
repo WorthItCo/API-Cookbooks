@@ -8,4 +8,4 @@ env RACK_ENV=<%= @rack_env %>
 env NEW_RELIC_DISABLE_MIDDLEWARE_INSTRUMENTATION=true
 chdir <%= @deploy[:deploy_to] %>/current
 
-exec sudo -u deploy -E -- ruby <%= @deploy[:deploy_to] -%>/current/bin/crawler -h <%= @hostname -%> -p <%= @port %> -j <%= @proto %> >> /var/log/crawler/<%= @application %>-<%= @instance %>.log 2>&1
+exec sudo -u deploy -E -- ruby <%= @deploy[:deploy_to] -%>/current/bin/crawler --output=/var/log/crawler/<%= @application %>-<%= @instance %>.log
