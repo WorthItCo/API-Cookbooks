@@ -4,5 +4,5 @@ maintainer_email 'chris@worthit.co'
 license          'All rights reserved'
 description      'Installs/Configures products_chef'
 long_description 'Installs/Configures products_chef'
-version          '0.2.18'
+version          '0.2.19'
 
